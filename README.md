@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# AAA Future Edge
 
-First, run the development server:
+Corporate website for AAA Future Edge, built with Next.js, TypeScript, and Tailwind CSS 4.
+
+</div>
+
+## About
+
+The website presents AAA Future Edge's consulting services, company information, career opportunities, articles, gallery, and contact details. It uses the Next.js App Router and preserves the site's existing branding and content.
+
+## Technology
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4 with DaisyUI 5
+- pnpm
+
+## Getting started
+
+### Requirements
+
+- Node.js 20.9 or newer
+- pnpm 12.4.2 (the version declared in `package.json`)
+
+### Install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install --frozen-lockfile
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Run the development server
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Available scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Command | Description |
+| --- | --- |
+| `pnpm dev` | Start the local development server |
+| `pnpm lint` | Run ESLint |
+| `pnpm exec tsc --noEmit` | Check TypeScript types |
+| `pnpm build` | Create a production build |
+| `pnpm start` | Serve the production build |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run the production version locally:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm build
+pnpm start
+```
 
-## Deploy on Vercel
+## Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| URL | Page |
+| --- | --- |
+| `/` | Home |
+| `/explore` | About AAA Future Edge |
+| `/career` | Careers |
+| `/job/1` | Job details and application information |
+| `/contact` | Contact details and form |
+| `/gallery` | Gallery |
+| `/blog` | Blog |
+| `/core-services` | Core services |
+| `/it-strategy` | IT strategy |
+| `/hr-strategy` | HR strategy |
+| `/it-services` | IT services |
+| `/hr-services` | HR services |
+| `/career-counselling` | Career counselling |
+| `/health-tourism` | Health tourism |
+| `/scope-of-works` | Scope of works |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Legacy uppercase URLs redirect to their lowercase equivalents. SEO metadata, `robots.txt`, and `sitemap.xml` are provided by the App Router.
+
+## Project structure
+
+```text
+app/          App Router layouts, routes, metadata, and global styles
+components/   Reusable TypeScript React components
+assets/       Imported source images and other assets
+public/       Static public assets
+layouts/      Shared site layout
+lib/          Shared helpers, including metadata utilities
+```
+
+## Notes
+
+- The contact and job application forms currently have no submission endpoint or integration.
+- The career listing includes links for several job IDs, but only job ID `1` has a detail record.
+- Some images and visual assets are served by external hosts, so their availability depends on those services.
+
+## License
+
+No license is currently specified for this repository.
