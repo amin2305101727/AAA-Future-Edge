@@ -1,80 +1,80 @@
-import React from 'react'
+import {
+  FaBullseye,
+  FaChartSimple,
+  FaGear,
+  FaUsers,
+} from "react-icons/fa6";
+
+const aboutCards = [
+  {
+    title: "Our Mission",
+    description:
+      "Statement about your commitment to helping clients achieve their career goals.",
+    icon: FaBullseye,
+  },
+  {
+    title: "Our Team",
+    description: "Brief bios of counselors and their qualifications.",
+    icon: FaUsers,
+  },
+  {
+    title: "Our Approach",
+    description: "Description of your counseling philosophy and methods.",
+    icon: FaGear,
+  },
+  {
+    title: "Why Choose Us",
+    description: "Unique selling points and advantages of your service.",
+    icon: FaChartSimple,
+  },
+];
 
 const CareerCouncilingAbout = () => {
   return (
-    <div>
-          <div className="bg-gradient-to-r from-[#00172d] via-[#002d5f] to-[#004dad] py-14">
-      <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto max-w-[1300px]">
+    <section
+      className="relative overflow-hidden bg-[#f7faff] bg-cover bg-center px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+      style={{ backgroundImage: "url('/images/Career-about.png')" }}
+    >
+      <div className="relative mx-auto grid max-w-[1400px] items-center gap-10 lg:grid-cols-[1fr_0.95fr] lg:gap-14">
         <div>
+          <div className="mb-3 h-1 w-16 rounded-full bg-[#1688e8]" />
+          <h2 className="mb-7 text-4xl leading-tight font-extrabold tracking-tight text-[#102345] sm:text-5xl lg:text-6xl">
+            About <span className="text-[#0877df]">Us</span>
+          </h2>
+
+          <div className="grid gap-3 sm:gap-4">
+            {aboutCards.map(({ title, description, icon: Icon }) => (
+              <article
+                key={title}
+                className="group flex items-center gap-4 rounded-2xl border border-blue-100/90 bg-white/85 p-4 shadow-[0_8px_24px_rgba(25,91,154,0.06)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#1688e8] hover:bg-[#eaf5ff] hover:shadow-[0_14px_30px_rgba(25,91,154,0.14)] sm:gap-5 sm:p-5"
+              >
+                <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-[#e8f4ff] text-2xl text-[#0877df] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#0877df] group-hover:text-white sm:size-16">
+                  <Icon aria-hidden="true" />
+                </span>
+                <div className="min-w-0">
+                  <h3 className="text-lg leading-6 font-bold text-[#102345] transition-colors duration-300 group-hover:text-[#075db1] sm:text-xl">
+                    {title}
+                  </h3>
+                  <p className="mt-1 text-left text-sm leading-6 text-slate-600 transition-colors duration-300 group-hover:text-slate-700 sm:text-base">
+                    {description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="mx-auto w-full max-w-[620px] lg:ml-auto">
           <img
             src="https://i.postimg.cc/3rk38DzB/Pngtree-cyber-security-system-technology-landing-14868800-1.png"
-            className="w-[600px]"
-          ></img>
-        </div>
-        <div>
-          <section className="flex items-center h-full">
-            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-              <h1 className="text-white font-bold text-3xl lg:text-5xl ml-6 ">
-                About Us
-              </h1>
-              <div className="px-5 mt-12">
-                <div className="grid grid-cols-1 gap-3 lg:gap-5 sm:grid-cols-1 mt-100">
-                  <div className="flex items-start">
-                    <img src="https://i.postimg.cc/RZycYfrD/Rectangle-114.png"></img>
-                    <div className="ml-5">
-                      <h3 className="text-lg font-bold text-white">
-                      Our Mission
-                      </h3>
-                      <p className="mt-4 text-base text-gray-200">
-                      Statement about your commitment to helping clients achieve their career goals.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <img src="https://i.postimg.cc/1zFp1ts5/Rectangle-115.png"></img>
-                    <div className="ml-5">
-                      <h3 className="text-lg font-bold text-white">
-                      Our Team
-                      </h3>
-                      <p className="mt-4 text-base text-gray-200">
-                      Brief bios of counselors and their qualifications.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <img src="https://i.postimg.cc/P5PWKy7D/Rectangle-116.png"></img>
-                    <div className="ml-5">
-                      <h3 className="text-lg font-bold text-white">
-                      Our Approach
-                      </h3>
-                      <p className="mt-4 text-base text-gray-200">
-                      Description of your counseling philosophy and methods.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <img src="https://i.postimg.cc/P5PWKy7D/Rectangle-116.png"></img>
-                    <div className="ml-5">
-                      <h3 className="text-lg font-bold text-white">
-                      Why Choose Us
-                      </h3>
-                      <p className="mt-4 text-base text-gray-200">
-                      Unique selling points and advantages of your service.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+            alt="Digital security illustration representing career counselling and guidance"
+            className="h-auto w-full"
+            loading="lazy"
+          />
         </div>
       </div>
-    </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default CareerCouncilingAbout
+export default CareerCouncilingAbout;
