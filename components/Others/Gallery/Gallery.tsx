@@ -104,9 +104,9 @@ const Gallery = ({ images = [] }: GalleryProps) => {
               <span>OUR MOMENTS</span>
               <span className="h-0.5 w-10 bg-[#f47716] sm:w-12" />
             </div>
-            <h1 className="text-[clamp(2.5rem,4.5vw,3.75rem)] leading-[1.05] font-extrabold tracking-tight text-[#102b4e]">
+            <h2 className="text-[clamp(2.5rem,4.5vw,3.75rem)] leading-[1.05] font-extrabold tracking-tight text-[#102b4e]">
               Gallery
-            </h1>
+            </h2>
             <p className="mx-auto mt-4 max-w-4xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
               A closer look at our people, events and milestones.
             </p>

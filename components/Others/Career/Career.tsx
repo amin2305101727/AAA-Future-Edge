@@ -13,7 +13,6 @@ const jobListings = [
       "Strong understanding of HTML, CSS, and JavaScript",
       "Experience with version control systems",
     ],
-    applyLink: "#",
   },
   {
     id: 2,
@@ -26,7 +25,6 @@ const jobListings = [
       "Strong knowledge of databases and server architecture",
       "Experience with cloud platforms",
     ],
-    applyLink: "#",
   },
   {
     id: 3,
@@ -39,7 +37,6 @@ const jobListings = [
       "Strong knowledge of databases and server architecture",
       "Experience with cloud platforms",
     ],
-    applyLink: "#",
   },
   {
     id: 4,
@@ -52,7 +49,6 @@ const jobListings = [
       "Strong knowledge of databases and server architecture",
       "Experience with cloud platforms",
     ],
-    applyLink: "#",
   },
   {
     id: 5,
@@ -65,7 +61,6 @@ const jobListings = [
       "Strong knowledge of databases and server architecture",
       "Experience with cloud platforms",
     ],
-    applyLink: "#",
   },
   {
     id: 6,
@@ -78,9 +73,7 @@ const jobListings = [
       "Strong knowledge of databases and server architecture",
       "Experience with cloud platforms",
     ],
-    applyLink: "#",
   },
-  // Add more job listings here
 ];
 
 const CareerPage = () => {
@@ -114,7 +107,7 @@ const CareerPage = () => {
                   ))}
                 </ul>
                 <Link
-                  href={`/job/${job.id}`}
+                  href={job.id === 1 ? `/job/${job.id}` : "/contact"}
                   className="inline-block px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300"
                 >
                   Apply Now
@@ -136,12 +129,12 @@ const CareerPage = () => {
             to making an impact. Don’t miss out on the opportunity to grow your
             career with us.
           </p>
-          <a
-            href="#"
+          <Link
+            href="/contact"
             className="inline-block px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition duration-300"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </section>
     </div>

@@ -1,10 +1,10 @@
 const CoreITService = () => {
   return (
     <div className="bg-[#F5F5F5]">
-      <div className="pt-20 pb-20">
-        <h1 className="text-center text-3xl lg:text-5xl pt-5 pb-10 font-bold">
+      <div id="it-services-content" className="scroll-mt-24 pt-20 pb-20">
+        <h2 className="text-center text-3xl lg:text-5xl pt-5 pb-10 font-bold">
           Our Core IT Services
-        </h1>
+        </h2>
         <div className="px-4 lg:container lg:mx-auto lg:max-w-[1300px]">
           <div className="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {/* Card 1 */}

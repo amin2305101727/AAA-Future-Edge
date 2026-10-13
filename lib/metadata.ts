@@ -16,6 +16,20 @@ export function createPageMetadata(
       title,
       description,
       url: pathname,
+      images: [
+        {
+          url: "/images/home-hero.png",
+          width: 1905,
+          height: 825,
+          alt: "AAA Future Edge homepage hero image",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/images/home-hero.png"],
     },
   };
 }

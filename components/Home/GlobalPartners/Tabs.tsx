@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 // src/components/Tabs.js
 
 "use client";
