@@ -31,7 +31,7 @@ const ClientLogoCarousel = () => {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <div className="w-full overflow-hidden bg-gray-50 py-12">
+    <div className="w-full overflow-hidden bg-gray-50 bg-[url('/images/bg-leaders.png')] bg-cover bg-center py-12">
       <div className="text-center mb-8">
         <h2 className="lg:text-4xl font-bold text-[#f58a1f] uppercase mb-2">Trusted by Industry Leaders</h2>
         <p className="text-gray-600 ">Join a network of industry pioneers</p>

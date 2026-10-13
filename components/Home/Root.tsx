@@ -7,8 +7,12 @@ import ClientLogoCarousel from "./NewClient/NewClient";
 const Root = () => {
   return (
     <div>
-      <Hero />
-      <Goal />
+      <div className="relative">
+        <Hero />
+        <div className="relative z-10">
+          <Goal />
+        </div>
+      </div>
       <About />
       <HRConsultancy />
       <WhyChooseUs />

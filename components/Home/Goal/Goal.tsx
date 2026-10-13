@@ -212,11 +212,11 @@ const Goal = () => {
             </p>
 
             <Link
-              className="group mt-[25px] inline-flex min-h-[72px] min-w-[260px] items-center justify-center gap-6 rounded-[10px] border border-[#ff850f] bg-[linear-gradient(110deg,#ff8a12,#ff8614)] px-[30px] py-[17px] text-center text-[17px] font-bold text-white no-underline transition-[background,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#ed7808] hover:shadow-[0_9px_22px_rgba(255,133,15,0.22)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#1b2a40] max-[1100px]:min-h-[58px] max-[1100px]:min-w-[205px] max-[1100px]:gap-[18px] max-[560px]:mt-[22px] max-[560px]:min-h-[53px] max-[560px]:min-w-[185px] max-[560px]:gap-[18px] max-[560px]:rounded-lg max-[560px]:px-[22px] max-[560px]:py-3 max-[560px]:text-[15px]"
+              className="group mt-6 inline-flex min-h-12 min-w-[168px] items-center justify-center gap-4 rounded-lg border border-[#ff850f] bg-[linear-gradient(110deg,#ff8a12,#ff8614)] px-5 py-3 text-center text-sm font-semibold text-white no-underline transition-[background,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#ed7808] hover:shadow-[0_7px_18px_rgba(255,133,15,0.2)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#1b2a40] max-[1100px]:min-h-11 max-[1100px]:min-w-[156px] max-[1100px]:gap-3 max-[560px]:mt-5 max-[560px]:min-h-10 max-[560px]:min-w-[145px] max-[560px]:gap-3 max-[560px]:px-4 max-[560px]:py-2 max-[560px]:text-[13px]"
               href="/explore"
             >
               <span>Learn More</span>
-              <span className="text-[27px] leading-none font-normal transition-transform duration-200 group-hover:translate-x-1 max-[560px]:text-[23px]" aria-hidden="true">
+              <span className="text-xl leading-none font-normal transition-transform duration-200 group-hover:translate-x-1 max-[560px]:text-lg" aria-hidden="true">
                 →
               </span>
             </Link>
