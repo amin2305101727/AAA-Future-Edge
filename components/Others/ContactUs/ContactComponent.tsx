@@ -112,23 +112,26 @@ const ContactComponent = () => {
 
             <div className="rounded-2xl border border-[#e1e8f2] bg-white p-5 shadow-[0_12px_32px_rgba(24,46,80,0.08)] sm:p-7">
               {isSent ? (
-                <div className="flex min-h-[320px] flex-col items-center justify-center px-4 text-center sm:min-h-[350px]">
-                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#eafff2]">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#08c85a] text-2xl text-white">
-                      <FiCheck />
+                <div
+                  aria-live="polite"
+                  className="flex min-h-[320px] flex-col items-center justify-center px-4 text-center motion-safe:animate-[messageSuccessEnter_500ms_cubic-bezier(0.2,0.8,0.2,1)_both] sm:min-h-[350px]"
+                >
+                  <span className="flex h-20 w-20 items-center justify-center rounded-full bg-[#eafff2]">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#08c85a] text-3xl text-white shadow-[0_8px_20px_rgba(8,200,90,0.28)] motion-safe:animate-[messageCheckPop_600ms_150ms_cubic-bezier(0.2,0.8,0.2,1)_both]">
+                      <FiCheck aria-hidden="true" />
                     </span>
                   </span>
-                  <h2 className="mt-5 text-2xl font-bold text-[#001b4d]">
+                  <h2 className="mt-5 text-2xl font-bold text-[#001b4d] sm:text-3xl">
                     Message Sent Successfully
                   </h2>
-                  <p className="mt-3 max-w-xl text-base leading-7 text-slate-500">
+                  <p className="mt-3 max-w-xl text-base leading-7 text-slate-500 motion-safe:animate-[messageSuccessEnter_500ms_200ms_ease-out_both]">
                     Thank you for contacting Alliance Sourcing BD. We have
                     received your message and will get back to you shortly.
                   </p>
                   <button
                     type="button"
                     onClick={() => setIsSent(false)}
-                    className="mt-5 inline-flex h-11 items-center justify-center rounded-xl bg-[#0799b9] px-6 text-base font-bold text-white transition-colors hover:bg-[#ff7900]"
+                    className="mt-5 inline-flex h-11 items-center justify-center rounded-xl bg-[#0799b9] px-6 text-base font-bold text-white transition-colors hover:bg-[#ff7900] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0799b9]"
                   >
                     Send Another Message
                     <FiArrowRight aria-hidden="true" className="ml-3 size-5" />
