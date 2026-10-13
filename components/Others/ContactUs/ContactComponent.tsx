@@ -1,159 +1,189 @@
+"use client";
+
+import { FormEvent, useState } from "react";
+import {
+  FiCheck,
+  FiArrowRight,
+  FiExternalLink,
+  FiMail,
+  FiMapPin,
+  FiPhone,
+} from "react-icons/fi";
+
+const mapUrl = "https://maps.app.goo.gl/VkucUTwMF78L4ZXDA";
+const mapEmbedUrl =
+  "https://www.google.com/maps?q=House-774,+Road-11,+Avenue-02,+Mirpur+DOHS,+Dhaka-1216&z=15&output=embed";
+
+const contactCards = [
+  {
+    title: "Office",
+    value: "House-774, Road-11, Avenue-02, Mirpur DOHS, Dhaka-1216",
+    href: mapUrl,
+    icon: FiMapPin,
+  },
+  {
+    title: "Email",
+    value: "riadmahmud@gmail.com",
+    href: "mailto:riadmahmud@gmail.com",
+    icon: FiMail,
+  },
+  {
+    title: "Phone",
+    value: "+8801922000025",
+    href: "tel:+8801922000025",
+    icon: FiPhone,
+  },
+];
+
 const ContactComponent = () => {
+  const [isSent, setIsSent] = useState(false);
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSent(true);
+  };
+
   return (
-    <div>
-      <section className="bg-white">
-        <div className="container px-6 py-12 mx-auto">
-          <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
-            <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-              <div>
-                <span className="inline-block p-3 text-[#f58a1f] rounded-full bg-[#ffd3aa]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                    />
-                  </svg>
-                </span>
+    <main className="bg-[#F0F5FC]">
+      <section
+        className="relative flex min-h-[300px] items-center justify-center overflow-hidden bg-cover bg-center px-4 py-12 text-center sm:min-h-[360px] lg:min-h-[430px]"
+        style={{ backgroundImage: "url('/images/contact-bg.png')" }}
+      >
+        <div className="relative z-10 mx-auto max-w-6xl">
+          <span className="mx-auto block h-1.5 w-32 rounded-full bg-[#ff5f08]" />
+          <p className="mt-5 text-lg font-bold uppercase tracking-[0.16em] text-[#ff5f08] sm:text-2xl">
+            Contact Us
+          </p>
+          <h1 className="mt-5 text-4xl font-bold leading-tight text-[#001b4d] sm:text-5xl lg:text-6xl">
+            Let&apos;s Start a{" "}
+            <span className="text-[#ff5f08]">Conversation</span>
+          </h1>
+          <p className="mt-5 text-lg text-slate-600 sm:text-2xl">
+            We&apos;re here to help your business grow.
+          </p>
+        </div>
+      </section>
 
-                <h2 className="mt-4 text-base font-medium text-black ">
-                  Email
-                </h2>
-                <p className="mt-2 text-sm text-gray-500 ">
-                  Our friendly team is here to help.
+      <section className="bg-[#F0F5FC] px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            {contactCards.map(({ title, value, href, icon: Icon }) => (
+              <a
+                key={title}
+                href={href}
+                target={title === "Office" ? "_blank" : undefined}
+                rel={title === "Office" ? "noreferrer noopener" : undefined}
+                className="group flex min-h-[132px] flex-col rounded-2xl border border-[#e1e8f2] bg-white p-4 text-[#152747] shadow-[0_8px_24px_rgba(24,46,80,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#ff7900] hover:bg-gradient-to-br hover:from-[#ff7900] hover:to-[#f36b00] hover:text-white hover:shadow-[0_14px_32px_rgba(24,46,80,0.12)] sm:min-h-[140px] sm:p-5"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-orange-50 text-[#ff7900] transition-colors group-hover:bg-white/15 group-hover:text-white">
+                    <Icon className="text-lg" aria-hidden="true" />
+                  </span>
+                  <h2 className="text-lg font-bold">{title}</h2>
+                </div>
+                <p className="mt-3 break-words text-sm leading-5 text-slate-600 transition-colors group-hover:text-white/95 sm:text-[15px]">
+                  {value}
                 </p>
-                <p className="mt-2 text-sm text-[#f58a1f]">info@aaa-fe.com</p>
-              </div>
+              </a>
+            ))}
+          </div>
 
-              <div>
-                <span className="inline-block p-3 text-[#f58a1f] rounded-full bg-[#ffd3aa] ">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-                    />
-                  </svg>
-                </span>
-
-                <h2 className="mt-4 text-base font-medium text-black ">
-                  Office
-                </h2>
-                <p className="mt-2 text-sm text-gray-500 ">
-                  Come say hello at our office HQ.
-                </p>
-                <p className="mt-2 text-sm text-[#f58a1f]">
-                  House-774, Road-11, Avenue-02, Mirpur DOHS, Dhaka-1216
-                </p>
-              </div>
-
-              <div>
-                <span className="inline-block p-3 text-[#f58a1f] rounded-full bg-[#ffd3aa] ">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                    />
-                  </svg>
-                </span>
-
-                <h2 className="mt-4 text-base font-medium text-black ">
-                  Phone
-                </h2>
-                <p className="mt-2 text-sm text-gray-500 ">
-                  Sun-Thu from 9am to 6pm.
-                </p>
-                <p className="mt-2 text-sm text-[#f58a1f]">+880 1922000025</p>
-              </div>
+          <div className="mt-5 grid grid-cols-1 items-stretch gap-5 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6">
+            <div className="relative min-h-[320px] overflow-hidden rounded-2xl border border-white bg-white p-1.5 shadow-[0_12px_32px_rgba(24,46,80,0.08)] sm:min-h-[390px]">
+              <iframe
+                title="AAA Future Edge office location"
+                src={mapEmbedUrl}
+                className="h-[320px] w-full rounded-xl sm:h-[390px]"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <a
+                href={mapUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-[#1769d2] shadow-md transition-colors hover:bg-[#f5f8ff]"
+              >
+                Open in Maps
+                <FiExternalLink aria-hidden="true" className="size-4" />
+              </a>
             </div>
 
-            <div className="p-4 py-6 rounded-lg bg-gray-50  md:p-8">
-              <form>
-                <div className="-mx-2 md:items-center md:flex">
-                  <div className="flex-1 px-2">
-                    <label htmlFor="first-name" className="block mb-2 text-sm text-gray-600 ">
-                      First Name
-                    </label>
+            <div className="rounded-2xl border border-[#e1e8f2] bg-white p-5 shadow-[0_12px_32px_rgba(24,46,80,0.08)] sm:p-7">
+              {isSent ? (
+                <div className="flex min-h-[320px] flex-col items-center justify-center px-4 text-center sm:min-h-[350px]">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#eafff2]">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#08c85a] text-2xl text-white">
+                      <FiCheck />
+                    </span>
+                  </span>
+                  <h2 className="mt-5 text-2xl font-bold text-[#001b4d]">
+                    Message Sent Successfully
+                  </h2>
+                  <p className="mt-3 max-w-xl text-base leading-7 text-slate-500">
+                    Thank you for contacting Alliance Sourcing BD. We have
+                    received your message and will get back to you shortly.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setIsSent(false)}
+                    className="mt-5 inline-flex h-11 items-center justify-center rounded-xl bg-[#0799b9] px-6 text-base font-bold text-white transition-colors hover:bg-[#ff7900]"
+                  >
+                    Send Another Message
+                    <FiArrowRight aria-hidden="true" className="ml-3 size-5" />
+                  </button>
+                </div>
+              ) : (
+                <form className="flex h-full flex-col" onSubmit={handleSubmit}>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#ff7900]">
+                      Get in touch
+                    </span>
+                    <h2 className="mt-2 text-2xl font-bold text-[#102d61]">
+                      Send Us a Message
+                    </h2>
+                    <p className="mt-2 text-sm leading-6 text-slate-500">
+                      Tell us how we can help, and our team will get back to you.
+                    </p>
+                  </div>
+                  <div className="mt-5 space-y-3">
                     <input
-                      id="first-name"
+                      required
                       type="text"
-                      placeholder="Enter First Name"
-                      className="block w-full px-5 py-2.5 mt-2 text-gray-700  bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600"
+                      name="name"
+                      placeholder="Name"
+                      className="h-12 w-full rounded-xl border border-[#dce4ef] bg-[#f8fafd] px-4 text-sm text-[#152747] outline-none transition-colors placeholder:text-slate-500 hover:border-slate-300 focus:border-[#ff7900] focus:ring-2 focus:ring-[#ff7900]/15"
+                    />
+                    <input
+                      required
+                      type="email"
+                      name="email"
+                      placeholder="Email address"
+                      className="h-12 w-full rounded-xl border border-[#dce4ef] bg-[#f8fafd] px-4 text-sm text-[#152747] outline-none transition-colors placeholder:text-slate-500 hover:border-slate-300 focus:border-[#ff7900] focus:ring-2 focus:ring-[#ff7900]/15"
+                    />
+                    <textarea
+                      required
+                      name="message"
+                      placeholder="Message"
+                      rows={3}
+                      className="w-full resize-y rounded-xl border border-[#dce4ef] bg-[#f8fafd] px-4 py-3 text-sm text-[#152747] outline-none transition-colors placeholder:text-slate-500 hover:border-slate-300 focus:border-[#ff7900] focus:ring-2 focus:ring-[#ff7900]/15"
                     />
                   </div>
-
-                  <div className="flex-1 px-2 mt-4 md:mt-0">
-                    <label htmlFor="last-name" className="block mb-2 text-sm text-gray-600 ">
-                      Last Name
-                    </label>
-                    <input
-                      id="last-name"
-                      type="text"
-                      placeholder="Enter Last Name"
-                      className="block w-full px-5 py-2.5 mt-2 text-gray-700  bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 "
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-4">
-                  <label htmlFor="contact-email" className="block mb-2 text-sm text-gray-600 ">
-                    Email address
-                  </label>
-                  <input
-                    id="contact-email"
-                    type="email"
-                    placeholder="Enter Email address"
-                    className="block w-full px-5 py-2.5 mt-2 text-gray-700  bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 "
-                  />
-                </div>
-
-                <div className="w-full mt-4">
-                  <label htmlFor="contact-message" className="block mb-2 text-sm text-gray-600 ">
-                    Message
-                  </label>
-                  <textarea
-                    id="contact-message"
-                    className="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700  bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 "
-                    placeholder="Message"
-                  ></textarea>
-                </div>
-
-                <button className="w-full px-6 py-2.5 mt-4 text-sm font-medium tracking-wide text-white capitalize bg-[#f58a1f] rounded-lg hover:bg-[#898b8d] focus:ring focus:ring-[#ffd3aa] focus:ring-opacity-50 focus:outline-none">
-                  Get in touch
-                </button>
-              </form>
+                  <button
+                    type="submit"
+                    className="mt-4 flex h-12 w-full items-center justify-center rounded-xl bg-gradient-to-r from-[#ff7900] to-[#f36b00] px-6 text-base font-bold text-white shadow-[0_8px_18px_rgba(255,121,0,0.2)] transition-all hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(255,121,0,0.28)] focus:outline-none focus:ring-2 focus:ring-[#ff7900]/30"
+                  >
+                    Send Message
+                    <FiArrowRight aria-hidden="true" className="ml-3 size-5" />
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 };
 
