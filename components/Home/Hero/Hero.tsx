@@ -61,7 +61,7 @@ const Hero = () => {
 
       <div className="relative z-10 mx-auto flex h-full w-[calc(100%-64px)] max-w-[1440px] flex-col justify-between py-2 max-[1100px]:w-[calc(100%-56px)] max-[1100px]:py-2 max-[767px]:w-[calc(100%-40px)] max-[767px]:max-w-[580px] max-[767px]:py-2">
         <div className="w-[min(68%,820px)] max-[1100px]:w-[68%] max-[767px]:w-full">
-          <h1 className="m-0 max-w-[820px] text-[clamp(38px,4.3vw,62px)] leading-[0.99] font-bold tracking-[-0.055em] text-[#101c30] max-[1100px]:text-[clamp(32px,4vw,44px)] max-[767px]:text-[clamp(34px,8vw,48px)] max-[767px]:leading-[1]">
+          <h1 className="mt-4 mb-0 max-w-[820px] text-[clamp(38px,4.3vw,62px)] leading-[0.99] font-bold tracking-[-0.055em] text-[#101c30] max-[1100px]:text-[clamp(32px,4vw,44px)] max-[767px]:text-[clamp(34px,8vw,48px)] max-[767px]:leading-[1]">
             <span className="block">Your Trusted Partner in</span>
             <span className="block text-[#ff7900]">HR &amp; IT Solutions</span>
           </h1>

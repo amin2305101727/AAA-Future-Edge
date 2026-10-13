@@ -49,7 +49,7 @@ const WhyChooseUs = () => {
         alt=""
         fill
         sizes="100vw"
-        className="object-cover object-center"
+        className="object-cover object-center lg:object-contain"
       />
       <div
         aria-hidden="true"
