@@ -391,8 +391,6 @@ const images = [
 export default function GalleryData() {
   return (
     <Gallery
-      bannerTitle="Explore Our Beautiful Moments"
-      bannerSubtitle="Discover the wonders captured through our lens."
       images={images}
     />
   );
