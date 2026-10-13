@@ -39,7 +39,7 @@ export default function ExploreAbout() {
   return (
     <section
       id="about"
-      className="relative isolate overflow-hidden bg-gradient-to-br from-white via-slate-50 to-blue-50/60 pt-14 pb-6 sm:pt-20 sm:pb-8 lg:pt-24 lg:pb-10"
+      className="relative isolate overflow-hidden bg-gradient-to-br from-white via-slate-50 to-blue-50/60 pt-8 pb-6 sm:pt-12 sm:pb-8 lg:pt-16 lg:pb-10"
     >
       {/* Background Decorations */}
       <div
@@ -54,11 +54,61 @@ export default function ExploreAbout() {
 
       <div className="relative mx-auto max-w-[1536px] px-5 sm:px-8 lg:px-14">
         {/* Main About Section */}
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.98fr_1.02fr] lg:gap-14 xl:gap-16">
-          {/* Left Content */}
-          <div className="order-2 lg:order-1">
+        <div className="flow-root">
+          {/* Right Image */}
+          <div className="mb-14 w-full max-w-[760px] sm:mx-auto lg:float-right lg:mb-0 lg:ml-8 lg:w-[42%] lg:max-w-[520px] xl:ml-10">
+            <div className="relative w-full pb-10 pr-3 sm:pb-12 sm:pr-5">
+              {/* Orange Background Shape */}
+              <div
+                aria-hidden="true"
+                className="absolute -left-2 -top-5 h-[42%] w-[35%] rounded-[30px] bg-gradient-to-br from-orange-300 to-orange-100 sm:-left-5 sm:-top-7 sm:rounded-[36px]"
+              />
+
+              {/* Blue Background Shape */}
+              <div
+                aria-hidden="true"
+                className="absolute -bottom-1 right-0 h-[55%] w-[55%] rounded-[30px] bg-blue-100/80 sm:rounded-[36px]"
+              />
+
+              {/* Company Image */}
+              <div className="relative z-10 aspect-[1.38/1] overflow-hidden rounded-[24px] border border-white/80 bg-slate-100 shadow-2xl shadow-slate-900/15 sm:rounded-[30px]">
+                <Image
+                  src="/images/AAA-Future-Edge-at-Sunset.png"
+                  alt="AAA Future-Edge corporate building at sunset"
+                  fill
+                  priority
+                  sizes="(max-width: 1023px) 100vw, 42vw"
+                  className="object-cover object-center transition-transform duration-700 hover:scale-[1.03]"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/15 via-transparent to-transparent" />
+              </div>
+
+              {/* Mission Card */}
+              <div className="absolute -bottom-1 right-0 z-20 flex w-[min(390px,92%)] items-center gap-4 rounded-[22px] border border-white/80 bg-white/95 p-4 shadow-[0_20px_55px_rgba(15,23,42,0.16)] backdrop-blur-md sm:bottom-0 sm:gap-5 sm:p-5 md:p-6">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-orange-100 sm:h-[76px] sm:w-[76px]">
+                  <FaPeopleGroup className="text-[34px] text-orange-500" />
+                </div>
+
+                <div>
+                  <span className="text-[11px] font-medium uppercase tracking-wider text-slate-400 sm:text-xs">
+                    Our Mission
+                  </span>
+
+                  <h3 className="mt-1 text-sm font-extrabold leading-snug text-slate-900 sm:text-base">
+                    Empowering People for a Better Tomorrow.
+                  </h3>
+
+                  <span className="mt-3 block h-1 w-8 rounded-full bg-orange-500" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* About Content */}
+          <div>
             {/* Section Label */}
-            <div className="mb-5 flex items-center gap-4">
+            <div className="mb-5 flex items-center gap-4 lg:max-w-[54%]">
               <span className="h-1 w-8 rounded-full bg-orange-500" />
 
               <span className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-600">
@@ -67,12 +117,12 @@ export default function ExploreAbout() {
             </div>
 
             {/* Heading */}
-            <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl xl:text-6xl">
+            <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:max-w-[54%] xl:text-6xl">
               AAA <span className="text-orange-500">Future-Edge</span>
             </h2>
 
             {/* Subtitle */}
-            <p className="mt-5 max-w-2xl text-base italic leading-7 text-slate-500 sm:text-lg sm:leading-8">
+            <p className="mt-5 max-w-2xl text-base italic leading-7 text-slate-500 sm:text-lg sm:leading-8 lg:max-w-[54%]">
               A people-focused consulting firm driving organizational success
               through strategic HR solutions.
             </p>
@@ -118,60 +168,10 @@ export default function ExploreAbout() {
               </p>
             </div>
           </div>
-
-          {/* Right Image */}
-          <div className="order-1 lg:order-2">
-            <div className="relative mx-auto w-full max-w-[760px] pb-10 pr-3 sm:pb-12 sm:pr-5">
-              {/* Orange Background Shape */}
-              <div
-                aria-hidden="true"
-                className="absolute -left-2 -top-5 h-[42%] w-[35%] rounded-[30px] bg-gradient-to-br from-orange-300 to-orange-100 sm:-left-5 sm:-top-7 sm:rounded-[36px]"
-              />
-
-              {/* Blue Background Shape */}
-              <div
-                aria-hidden="true"
-                className="absolute -bottom-1 right-0 h-[55%] w-[55%] rounded-[30px] bg-blue-100/80 sm:rounded-[36px]"
-              />
-
-              {/* Company Image */}
-              <div className="relative z-10 aspect-[1.2/1] overflow-hidden rounded-[24px] border border-white/80 bg-slate-100 shadow-2xl shadow-slate-900/15 sm:aspect-[1.28/1] sm:rounded-[30px]">
-                <Image
-                  src="/images/AAA-Future-Edge-at-Sunset.png"
-                  alt="AAA Future-Edge corporate building at sunset"
-                  fill
-                  priority
-                  sizes="(max-width: 1023px) 100vw, 50vw"
-                  className="object-cover object-center transition-transform duration-700 hover:scale-[1.03]"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/15 via-transparent to-transparent" />
-              </div>
-
-              {/* Mission Card */}
-              <div className="absolute -bottom-1 right-0 z-20 flex w-[min(390px,92%)] items-center gap-4 rounded-[22px] border border-white/80 bg-white/95 p-4 shadow-[0_20px_55px_rgba(15,23,42,0.16)] backdrop-blur-md sm:bottom-0 sm:gap-5 sm:p-5 md:p-6">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-orange-100 sm:h-[76px] sm:w-[76px]">
-                  <FaPeopleGroup className="text-[34px] text-orange-500" />
-                </div>
-
-                <div>
-                  <span className="text-xs font-medium uppercase tracking-wider text-slate-400 sm:text-sm">
-                    Our Mission
-                  </span>
-
-                  <h3 className="mt-1 text-base font-extrabold leading-snug text-slate-900 sm:text-lg">
-                    Empowering People for a Better Tomorrow.
-                  </h3>
-
-                  <span className="mt-3 block h-1 w-8 rounded-full bg-orange-500" />
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Statistics Bar */}
-        <div className="mt-20 grid grid-cols-1 overflow-hidden rounded-[24px] border border-white/80 bg-white/90 shadow-[0_15px_50px_rgba(15,23,42,0.05)] backdrop-blur-sm sm:grid-cols-2 lg:mt-24 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 overflow-hidden rounded-[24px] border border-white/80 bg-white/90 shadow-[0_15px_50px_rgba(15,23,42,0.05)] backdrop-blur-sm sm:grid-cols-2 lg:mt-12 lg:grid-cols-4">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             const isOrange = stat.color === "orange";
