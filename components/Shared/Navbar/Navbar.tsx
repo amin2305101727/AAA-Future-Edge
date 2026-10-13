@@ -14,7 +14,7 @@ type NavigationLinksProps = Readonly<{
 function NavigationLinks({ mobile = false }: NavigationLinksProps) {
   const pathname = usePathname();
   const linkClass =
-    "block rounded px-3 py-2 text-center text-lg font-bold text-[#111c37] transition-colors hover:text-[#ff7900] xl:px-3 xl:text-xl";
+    "block rounded px-3 py-1.5 text-center text-sm font-semibold text-[#111c37] transition-colors hover:text-[#ff7900] xl:px-3 xl:text-base";
   const dropdownClass = mobile
     ? "ml-3 border-l border-orange-200 pl-2"
     : "absolute left-0 top-full z-20 mt-2 hidden min-w-56 rounded-xl border border-orange-100 bg-white p-2 text-black shadow-lg group-hover:block group-focus-within:block";
@@ -53,7 +53,7 @@ function NavigationLinks({ mobile = false }: NavigationLinksProps) {
         <details>
           <summary className={`${linkClass} flex cursor-pointer list-none items-center justify-center`}>
             Solutions
-            <GoChevronDown aria-hidden="true" className="ml-1 text-lg" />
+            <GoChevronDown aria-hidden="true" className="ml-1 text-base" />
           </summary>
           <ul className={dropdownClass}>
             <li>
@@ -128,8 +128,8 @@ function NavigationLinks({ mobile = false }: NavigationLinksProps) {
 }
 
 const Navbar = () => (
-  <header className="sticky top-0 z-[9999] bg-[#f7f9fc]/90 px-3 pt-3 backdrop-blur-md sm:px-5 sm:pt-4">
-    <div className="relative mx-auto flex h-[72px] max-w-[1920px] items-center justify-between rounded-[18px] bg-white px-4 shadow-[0_10px_28px_rgba(23,32,51,0.1)] sm:h-[78px] sm:px-6 xl:h-[86px] xl:rounded-[22px] xl:px-7 2xl:h-[94px] 2xl:px-9">
+  <header className="sticky top-0 z-[9999] bg-transparent px-3 pt-2 sm:px-5 sm:pt-2.5">
+    <div className="relative mx-auto flex h-[60px] max-w-[1920px] items-center justify-between rounded-[14px] bg-white px-4 sm:h-[64px] sm:px-6 xl:h-[68px] xl:rounded-[18px] xl:px-7 2xl:px-9">
       <Link
         href="/"
         aria-label="AAA Future Edge home"
@@ -141,7 +141,7 @@ const Navbar = () => (
           width={logo.width}
           height={logo.height}
           priority
-          className="h-auto w-[88px] sm:w-[98px] xl:w-[96px] 2xl:w-[108px]"
+          className="h-auto w-[72px] sm:w-[78px] xl:w-[82px]"
         />
       </Link>
 
@@ -161,7 +161,7 @@ const Navbar = () => (
             <svg
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 sm:h-6 sm:w-6"
+              className="h-4 w-4 sm:h-5 sm:w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -196,10 +196,10 @@ const Navbar = () => (
         </div>
         <Link
           href="/contact"
-          className="hidden items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#ff7900] to-[#ff5300] px-7 py-3 text-xl font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg xl:flex 2xl:px-8"
+          className="hidden items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#ff7900] to-[#ff5300] px-5 py-2 text-base font-semibold text-white transition-all hover:-translate-y-0.5 xl:flex 2xl:px-6"
         >
           Contact
-          <FiArrowRight aria-hidden="true" className="h-6 w-6" />
+          <FiArrowRight aria-hidden="true" className="h-4 w-4" />
         </Link>
       </div>
     </div>
