@@ -1,40 +1,40 @@
 const HRServiceBanner = () => {
   return (
-    <div>
-      <div
-        className="bg-gradient-to-r from-[#000F1A] via-[#000F1A] to-[#0080E5]"
-        id="#hr-services"
-      >
-        <div className="px-4 lg:container lg:mx-auto lg:max-w-[1300px] lg:pt-28 lg:pb-28">
-          <div className="grid gap-10 lg:grid-cols-2">
-            <div className="lg:pr-10 mt-20">
-              <h5 className="mb-4 text-3xl lg:text-6xl font-bold text-white">
-                HR Services
-              </h5>
-              <p className="mb-6 text-white max-w-[700px]">
-                A Human Resource Information System (HRIS) is a software
-                solution that integrates and manages an organization&apos;s HR
-                processes, including employee data, payroll, recruitment,
-                benefits administration, and performance management. It
-                streamlines and automates HR operations, enhancing efficiency,
-                accuracy, and data-driven decision-making.
-              </p>
-              <button className="btn  text-white bg-[#00B4D8]">
-                Learn More
-              </button>
-            </div>
-
-            <div>
-              <img
-                className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
-                src="https://i.postimg.cc/XY9QbQVC/Pngtree-marketing-strategy-campaign-concept-with-7537111-1.png"
-                alt=""
-              />
-            </div>
+    <section
+      id="hr-services"
+      className="relative flex min-h-[620px] items-center overflow-hidden bg-[#001b32] bg-cover bg-left bg-no-repeat px-5 py-16 sm:min-h-[680px] sm:px-8 lg:min-h-[min(760px,calc(100svh-78px))] lg:bg-center lg:px-0"
+      style={{ backgroundImage: "url('/images/HR-Service.png')" }}
+    >
+      <div className="mx-auto w-full max-w-[1760px] lg:pl-12">
+        <div className="max-w-[760px]">
+          <div className="mb-4 flex items-center gap-4 text-xs font-medium uppercase tracking-[0.2em] text-slate-200 sm:text-sm">
+            <span className="h-1 w-[74px] rounded-full bg-[#08c8ec]" />
+            <span>Our Solutions</span>
           </div>
+          <h1 className="text-[clamp(3rem,5.5vw,5.25rem)] leading-[0.98] font-extrabold tracking-tight text-white">
+            HR <span className="text-[#08bde8]">Services</span>
+          </h1>
+          <p className="mt-5 max-w-[740px] text-justify text-sm leading-6 text-slate-100 sm:text-base sm:leading-7">
+            A Human Resource Information System (HRIS) is a software solution
+            that integrates <br />
+            and manages an organization&apos;s HR processes, including employee
+            data, payroll, <br />
+            recruitment, benefits administration, and performance management. It streamlines <br />
+            and automates HR operations, enhancing efficiency, accuracy, and data-driven <br />
+            decision-making.
+          </p>
+          <a
+            href="#hr-services-content"
+            className="mt-7 inline-flex items-center gap-5 rounded-xl border border-cyan-400/60 bg-gradient-to-r from-[#087cf5] to-[#008cf0] px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-blue-950/30 transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
+          >
+            Learn More
+            <span aria-hidden="true" className="text-2xl leading-none">
+              →
+            </span>
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

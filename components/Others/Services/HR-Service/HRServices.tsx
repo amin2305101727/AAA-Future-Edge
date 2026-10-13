@@ -7,7 +7,9 @@ const HRServices = () => {
   return (
     <div>
       <HRServiceBanner></HRServiceBanner>
-      <TalentHR></TalentHR>
+      <div id="hr-services-content">
+        <TalentHR></TalentHR>
+      </div>
       <HRAudit></HRAudit>
       <Compliance></Compliance>
     </div>

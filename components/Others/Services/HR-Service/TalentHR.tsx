@@ -1,76 +1,57 @@
-import Link from "next/link";
+import { FaChalkboardUser, FaUsers } from "react-icons/fa6";
+
+const services = [
+  {
+    title: "Talent Hunt",
+    description:
+      "Talent hunt, or headhunting, is the proactive process of identifying and recruiting highly skilled and experienced individuals for specific roles within an organization, often for senior or executive positions. This targeted recruitment approach involves seeking out candidates who are not actively looking for a job but possess the desired expertise and qualifications to meet the company's needs.",
+    icon: FaUsers,
+  },
+  {
+    title: "Training & Development",
+    description:
+      "Training and development refer to the continuous process of enhancing employees' skills, knowledge, and competencies through educational programs and learning opportunities. It aims to improve individual and organizational performance, foster career growth, and help teams adapt to changing industry demands.",
+    icon: FaChalkboardUser,
+  },
+];
 
 const TalentHR = () => {
   return (
-    <div>
-         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-      <div className="grid max-w-screen-lg gap-8 row-gap-6 sm:mx-auto lg:grid-cols-2">
-        <Link
-          href="/"
-          aria-label="View item"
-          title="View item"
-          className="relative block p-px overflow-hidden transition duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl"
-        >
-          <div className="absolute bottom-0 left-0 w-full h-1 duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
-          <div className="absolute bottom-0 left-0 w-1 h-full duration-300 origin-bottom transform scale-y-0 bg-deep-purple-accent-400 group-hover:scale-y-100" />
-          <div className="absolute top-0 left-0 w-full h-1 duration-300 origin-right transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
-          <div className="absolute bottom-0 right-0 w-1 h-full duration-300 origin-top transform scale-y-0 bg-deep-purple-accent-400 group-hover:scale-y-100" />
-          <div className="relative flex items-center justify-between p-5 bg-white rounded-sm">
-            <div className="pr-4">
-              <h6 className="mb-4 font-semibold text-2xl">
-              Talent Hunt
-              </h6>
-              <p className="text-sm text-gray-900 text-justify">
-              Talent hunt, or headhunting, is the proactive process of identifying and recruiting highly skilled and experienced individuals for specific roles within an organization, often for senior or executive positions. This targeted recruitment approach involves seeking out candidates who are not actively looking for a job but possess the desired expertise and qualifications to meet the company&apos;s needs.
+    <section className="relative overflow-hidden bg-[#f7faff] px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-20 -top-24 size-72 rounded-full bg-orange-100/70 blur-3xl"
+      />
+      <div className="relative mx-auto grid max-w-[1500px] gap-6 lg:grid-cols-2 lg:gap-8">
+        {services.map((service) => {
+          const Icon = service.icon;
 
+          return (
+            <article
+              key={service.title}
+              className="group rounded-[22px] border border-blue-100 bg-white p-6 shadow-[0_12px_32px_rgba(25,64,112,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-300 hover:bg-orange-50/70 hover:shadow-[0_20px_40px_rgba(216,112,35,0.16)] sm:p-8 lg:p-10"
+            >
+              <div className="flex items-center gap-5">
+                <div className="flex size-[76px] shrink-0 items-center justify-center rounded-full bg-orange-50 text-[#f47716] transition-colors duration-300 group-hover:bg-orange-100">
+                  <Icon className="text-[38px]" aria-hidden="true" />
+                </div>
+                <span
+                  aria-hidden="true"
+                  className="h-14 w-px bg-[#f47716] transition-transform duration-300 group-hover:scale-y-110"
+                />
+                <h2 className="text-2xl leading-tight font-bold text-[#102b4e] transition-colors duration-300 group-hover:text-[#d95f0b] sm:text-3xl">
+                  {service.title}
+                </h2>
+              </div>
+              <p className="mt-6 text-justify text-base leading-7 text-slate-600 transition-colors duration-300 group-hover:text-slate-700 sm:text-lg sm:leading-8">
+                {service.description}
               </p>
-            </div>
-            <div className="flex items-center justify-center">
-              <svg
-                className="w-3 text-gray-700 transition-colors duration-300 group-hover:text-deep-purple-accent-400"
-                fill="currentColor"
-                viewBox="0 0 12 12"
-              >
-                <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
-              </svg>
-            </div>
-          </div>
-        </Link>
-        <Link
-          href="/"
-          aria-label="View item"
-          title="View item"
-          className="relative block p-px overflow-hidden transition duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl"
-        >
-          <div className="absolute bottom-0 left-0 w-full h-1 duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
-          <div className="absolute bottom-0 left-0 w-1 h-full duration-300 origin-bottom transform scale-y-0 bg-deep-purple-accent-400 group-hover:scale-y-100" />
-          <div className="absolute top-0 left-0 w-full h-1 duration-300 origin-right transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
-          <div className="absolute bottom-0 right-0 w-1 h-full duration-300 origin-top transform scale-y-0 bg-deep-purple-accent-400 group-hover:scale-y-100" />
-          <div className="relative flex items-center justify-between p-5 bg-white rounded-sm">
-            <div className="pr-4">
-              <h6 className="mb-4 font-semibold text-2xl">
-              Training & Development
-              </h6>
-              <p className="text-sm text-gray-900 text-justify">
-              Training and development refer to the continuous process of enhancing employees&apos; skills, knowledge, and competencies through various educational programs and learning opportunities. It aims to improve individual and organizational performance, foster career growth, and adapt to changing industry demands.
-z
-              </p>
-            </div>
-            <div className="flex items-center justify-center">
-              <svg
-                className="w-3 text-gray-700 transition-colors duration-300 group-hover:text-deep-purple-accent-400"
-                fill="currentColor"
-                viewBox="0 0 12 12"
-              >
-                <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
-              </svg>
-            </div>
-          </div>
-        </Link>
+            </article>
+          );
+        })}
       </div>
-    </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default TalentHR
+export default TalentHR;
