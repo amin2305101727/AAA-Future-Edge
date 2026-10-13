@@ -18,7 +18,16 @@ function NavigationLinks({ mobile = false }: NavigationLinksProps) {
     "block rounded px-3 py-1.5 text-center text-sm font-semibold text-[#111c37] transition-colors hover:text-[#ff7900] xl:px-3 xl:text-base";
   const dropdownClass = mobile
     ? "ml-3 border-l border-orange-200 pl-2"
-    : "absolute left-0 top-full z-20 mt-2 hidden min-w-56 rounded-xl border border-orange-100 bg-white p-2 text-black shadow-lg group-hover:block group-focus-within:block";
+    : "absolute left-0 top-full z-20 mt-2 min-w-56 rounded-xl border border-orange-100 bg-white p-2 text-black shadow-lg";
+
+  const closeMenus = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.currentTarget
+      .closest("header")
+      ?.querySelectorAll<HTMLDetailsElement>("details[open]")
+      .forEach((details) => {
+        details.open = false;
+      });
+  };
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname === href;
@@ -37,6 +46,7 @@ function NavigationLinks({ mobile = false }: NavigationLinksProps) {
           aria-current={isActive("/") ? "page" : undefined}
           className={getLinkClass("/")}
           href="/"
+          onClick={closeMenus}
         >
           Home
         </Link>
@@ -46,24 +56,30 @@ function NavigationLinks({ mobile = false }: NavigationLinksProps) {
           aria-current={isActive("/explore") ? "page" : undefined}
           className={getLinkClass("/explore")}
           href="/explore"
+          onClick={closeMenus}
         >
           Explore
         </Link>
       </li>
       <li className="group relative">
-        <details>
+        <details name="navigation-submenu">
           <summary className={`${linkClass} flex cursor-pointer list-none items-center justify-center`}>
             Solutions
             <GoChevronDown aria-hidden="true" className="ml-1 text-base" />
           </summary>
           <ul className={dropdownClass}>
             <li>
-              <Link className={linkClass} href="/hr-strategy">
+              <Link className={linkClass} href="/hr-strategy" onClick={closeMenus}>
                 HR Strategy
               </Link>
             </li>
             <li>
-              <Link className={linkClass} href="/scope-of-works">
+              <Link className={linkClass} href="/it-strategy" onClick={closeMenus}>
+                IT Strategy
+              </Link>
+            </li>
+            <li>
+              <Link className={linkClass} href="/scope-of-works" onClick={closeMenus}>
                 Scope of Works
               </Link>
             </li>
@@ -71,24 +87,24 @@ function NavigationLinks({ mobile = false }: NavigationLinksProps) {
         </details>
       </li>
       <li className="group relative">
-        <details>
+        <details name="navigation-submenu">
           <summary className={`${linkClass} flex cursor-pointer list-none items-center justify-center`}>
             Services
             <GoChevronDown aria-hidden="true" className="ml-1 text-lg" />
           </summary>
           <ul className={dropdownClass}>
             <li>
-              <Link className={linkClass} href="/hr-services">
+              <Link className={linkClass} href="/hr-services" onClick={closeMenus}>
                 HR Services
               </Link>
             </li>
             <li>
-              <Link className={linkClass} href="/core-services">
+              <Link className={linkClass} href="/core-services" onClick={closeMenus}>
                 Core Services
               </Link>
             </li>
             <li>
-              <Link className={linkClass} href="/career-counselling">
+              <Link className={linkClass} href="/career-counselling" onClick={closeMenus}>
                 Career Counseling
               </Link>
             </li>
@@ -100,6 +116,7 @@ function NavigationLinks({ mobile = false }: NavigationLinksProps) {
           aria-current={isActive("/gallery") ? "page" : undefined}
           className={getLinkClass("/gallery")}
           href="/gallery"
+          onClick={closeMenus}
         >
           Gallery
         </Link>
@@ -109,6 +126,7 @@ function NavigationLinks({ mobile = false }: NavigationLinksProps) {
           aria-current={isActive("/blog") ? "page" : undefined}
           className={getLinkClass("/blog")}
           href="/blog"
+          onClick={closeMenus}
         >
           Blogs
         </Link>
@@ -119,6 +137,7 @@ function NavigationLinks({ mobile = false }: NavigationLinksProps) {
             aria-current={isActive("/contact") ? "page" : undefined}
             className={getLinkClass("/contact")}
             href="/contact"
+            onClick={closeMenus}
           >
             Contact
           </Link>
