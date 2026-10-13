@@ -9,7 +9,9 @@ const ITStrategy = () => {
   return (
     <div>
       <ITBanner></ITBanner>
-      <ITState></ITState>
+      <div id="it-strategy-services">
+        <ITState />
+      </div>
       <Infrastructure />
       <PlanningPolicy></PlanningPolicy>
       <Security></Security>
