@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { GoChevronDown } from "react-icons/go";
 import { FiArrowRight, FiSearch } from "react-icons/fi";
 import logo from "../../../public/flogo.png";
@@ -127,9 +128,26 @@ function NavigationLinks({ mobile = false }: NavigationLinksProps) {
   );
 }
 
-const Navbar = () => (
-  <header className="sticky top-0 z-[9999] bg-transparent px-3 pt-2 sm:px-5 sm:pt-2.5">
-    <div className="relative mx-auto flex h-[60px] max-w-[1920px] items-center justify-between rounded-[14px] bg-white px-4 sm:h-[64px] sm:px-6 xl:h-[68px] xl:rounded-[18px] xl:px-7 2xl:px-9">
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateScrollState = () => setIsScrolled(window.scrollY > 10);
+
+    updateScrollState();
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+    return () => window.removeEventListener("scroll", updateScrollState);
+  }, []);
+
+  return (
+  <header
+    className={`sticky top-0 z-[9999] px-3 pt-2 transition-colors duration-300 sm:px-5 sm:pt-2.5 ${
+      isScrolled ? "bg-transparent" : "bg-white/50"
+    }`}
+  >
+    <div
+      className="relative mx-auto flex h-[60px] max-w-[1920px] items-center justify-between rounded-[14px] border border-slate-300 bg-white px-4 sm:h-[64px] sm:px-6 xl:h-[68px] xl:rounded-[18px] xl:px-7 2xl:px-9"
+    >
       <Link
         href="/"
         aria-label="AAA Future Edge home"
@@ -204,6 +222,7 @@ const Navbar = () => (
       </div>
     </div>
   </header>
-);
+  );
+};
 
 export default Navbar;
