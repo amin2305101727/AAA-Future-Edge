@@ -192,14 +192,14 @@ const Footer = () => {
               className="hidden h-4 border-l border-white/30 sm:block"
             />
             <p>
-              Developed By{" "}
+              Design &amp; Developed By{" "}
               <a
-                href="https://github.com/ruhulamin18"
+                href="https://360dsoul.com/"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="font-bold text-[#ff8500] hover:underline"
               >
-                Md. Ruhul Amin
+                360D Soul Ltd.
               </a>
             </p>
           </div>

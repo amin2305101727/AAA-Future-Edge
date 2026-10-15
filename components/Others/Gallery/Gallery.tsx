@@ -41,61 +41,6 @@ const Gallery = ({ images = [] }: GalleryProps) => {
 
   return (
     <>
-      <section
-        className="relative flex min-h-[390px] items-center justify-center overflow-hidden bg-cover bg-center px-5 py-16 sm:min-h-[460px] sm:px-8 lg:min-h-[clamp(460px,36.4vw,728px)]"
-        style={{ backgroundImage: "url('/images/gallary.png')" }}
-      >
-        <div className="w-full max-w-[1450px] text-center">
-          <div className="mb-5 flex items-center justify-center gap-4 text-[#102b4e] sm:mb-6 sm:gap-8">
-            <span className="h-px w-12 bg-[#102b4e]/60 sm:w-20 lg:w-28" />
-            <svg
-              aria-hidden="true"
-              className="h-11 w-11 sm:h-14 sm:w-14"
-              viewBox="0 0 48 48"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                x="12"
-                y="5"
-                width="27"
-                height="25"
-                rx="2.5"
-                stroke="currentColor"
-                strokeWidth="2.4"
-              />
-              <circle cx="31" cy="12.5" r="2.5" stroke="currentColor" strokeWidth="2.2" />
-              <rect
-                x="5"
-                y="17"
-                width="27"
-                height="25"
-                rx="2.5"
-                fill="white"
-                stroke="currentColor"
-                strokeWidth="2.4"
-              />
-              <circle cx="13" cy="24" r="2.2" stroke="currentColor" strokeWidth="2" />
-              <path
-                d="M7.5 37L15.5 29L20 33.5L24 29.5L30 35.5"
-                stroke="currentColor"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span className="h-px w-12 bg-[#102b4e]/60 sm:w-20 lg:w-28" />
-          </div>
-          <h1 className="text-[clamp(2rem,5vw,4.5rem)] leading-[1.12] font-extrabold tracking-tight text-[#102b4e] lg:whitespace-nowrap">
-            Explore Our{" "}
-            <span className="text-[#f47716]">Beautiful Moments</span>
-          </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-600 sm:text-xl sm:leading-8">
-            Discover the wonders captured through our lens.
-          </p>
-        </div>
-      </section>
-
       <section className="bg-[#f6f9fc] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="mx-auto max-w-[1400px]">
           <header className="mb-8 text-center sm:mb-10">
