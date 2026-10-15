@@ -41,14 +41,16 @@ AAA Future-Edge is a multi-page corporate website that introduces the company an
 
 ## Requirements
 
-- Node.js **20.9 or later**
+- Node.js **24.16.0 or later**
 - pnpm **12.4.2**, as declared in `package.json`
+
+Dokploy production deployments should use the included `Dockerfile`, which pins Node.js **24.16.0** and installs pnpm **12.4.2** directly instead of relying on Corepack.
 
 ## Getting started
 
 ### Prerequisites
 
-- Install Node.js **20.9 or later** and pnpm **12.4.2**.
+- Install Node.js **24.16.0 or later** and pnpm **12.4.2**.
 - Make sure Git is available if you need to clone the repository.
 
 ### Clone and install
