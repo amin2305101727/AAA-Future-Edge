@@ -41,16 +41,16 @@ AAA Future-Edge is a multi-page corporate website that introduces the company an
 
 ## Requirements
 
-- Node.js **24.16.0 or later**
+- Node.js **24.10.0 or later**
 - pnpm **12.4.2**, as declared in `package.json`
 
-Dokploy production deployments should use the included `Dockerfile`, which pins Node.js **24.16.0** and installs pnpm **12.4.2** directly instead of relying on Corepack.
+Dokploy can build with Nixpacks using the included `nixpacks.toml`, which installs pnpm **12.4.2** directly without Corepack. The included `Dockerfile` is also available and pins Node.js **24.16.0** and pnpm **12.4.2**.
 
 ## Getting started
 
 ### Prerequisites
 
-- Install Node.js **24.16.0 or later** and pnpm **12.4.2**.
+- Install Node.js **24.10.0 or later** and pnpm **12.4.2**.
 - Make sure Git is available if you need to clone the repository.
 
 ### Clone and install
