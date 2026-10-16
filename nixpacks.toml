@@ -1,8 +1,20 @@
+[variables]
+PATH = "/usr/local/bin:/usr/bin:$PATH"
+
 [phases.setup]
 nixPkgs = ["nodejs_24"]
 
 [phases.install]
 cmds = [
-  "npm install --global pnpm@12.4.2",
+  "npm install --global --prefix /usr/local pnpm@12.4.2 && ln -sf /usr/local/bin/pnpm /usr/bin/pnpm",
   "pnpm install --frozen-lockfile"
 ]
+
+[phases.build]
+cmds = [
+  "pnpm run build"
+]
+
+[start]
+cmd = "pnpm run start"
+
